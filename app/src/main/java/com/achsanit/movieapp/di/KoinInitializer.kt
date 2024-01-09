@@ -10,7 +10,7 @@ object KoinInitializer {
         startKoin {
             androidContext(app)
             modules(
-                listOf()
+                listOf(mainModule)
             )
         }
     }

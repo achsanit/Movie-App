@@ -92,4 +92,7 @@ dependencies {
 
     val coil_version = "1.3.2" // coil for load image
     implementation("io.coil-kt:coil:$coil_version")
+
+    val shimmer = "0.5.0" // view for loading event
+    implementation("com.facebook.shimmer:shimmer:$shimmer")
 }
