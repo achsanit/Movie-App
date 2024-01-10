@@ -1,9 +1,9 @@
 package com.achsanit.movieapp.di
 
-import android.util.Log
 import com.achsanit.movieapp.BuildConfig
 import com.achsanit.movieapp.data.MovieRepository
 import com.achsanit.movieapp.data.service.MovieService
+import com.achsanit.movieapp.ui.fragment.detailmovie.DetailMovieViewModel
 import com.achsanit.movieapp.ui.fragment.home.HomeViewModel
 import com.achsanit.movieapp.utils.CustomInterceptor
 import com.chuckerteam.chucker.api.ChuckerCollector
@@ -56,4 +56,5 @@ val mainModule = module {
     single { MovieRepository(get()) }
 
     viewModel { HomeViewModel(get()) }
+    viewModel { DetailMovieViewModel(get()) }
 }

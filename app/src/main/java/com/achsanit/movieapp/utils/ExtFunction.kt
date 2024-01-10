@@ -32,3 +32,20 @@ fun ImageRequest.Builder.setShimmerPlaceholder() {
 //    Set into placeholder
     placeholder(shimmerDrawable)
 }
+
+fun Int.toGender(): String {
+    return when(this) {
+        0 -> "Not specified"
+        1 -> "Female"
+        2 -> "Male"
+        3 -> "Non-binary"
+        else -> "Not set"
+    }
+}
+
+fun Int.minutesToHourMinute(): String {
+    val hour = this / 60
+    val minute = this % 60
+
+    return "${hour}h ${minute}m"
+}
