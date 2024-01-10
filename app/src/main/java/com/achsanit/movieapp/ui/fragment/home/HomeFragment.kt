@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.achsanit.movieapp.data.entity.MoviePoster
 import com.achsanit.movieapp.databinding.FragmentHomeBinding
@@ -24,10 +25,16 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private val homeViewModel: HomeViewModel by viewModel()
     private val popMovAdapter: PosterMovieAdapter by lazy {
-        PosterMovieAdapter { }
+        PosterMovieAdapter {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailMovieFragment(it.movieId)
+            findNavController().navigate(action)
+        }
     }
     private val topRateMovAdapter: PosterMovieAdapter by lazy {
-        PosterMovieAdapter { }
+        PosterMovieAdapter {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailMovieFragment(it.movieId)
+            findNavController().navigate(action)
+        }
     }
 
     override fun onCreateView(

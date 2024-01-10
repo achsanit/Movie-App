@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.achsanit.movieapp.BuildConfig
+import com.achsanit.movieapp.R
 import com.achsanit.movieapp.data.entity.MoviePoster
 import com.achsanit.movieapp.databinding.ItemMovieBinding
 import com.achsanit.movieapp.utils.setShimmerPlaceholder
@@ -17,9 +18,14 @@ class PosterMovieAdapter(private val onItemClick: (MoviePoster) -> Unit):
         fun bind(data: MoviePoster) {
             with(binding) {
                 val imageUrl = "${BuildConfig.BASE_IMAGE_URL}${data.posterPath}"
-                ivPoster.load(imageUrl) { setShimmerPlaceholder() }
                 tvRating.text = String.format("%.1f", data.rating)
                 root.setOnClickListener { onItemClick(data) }
+
+                if (imageUrl.isBlank()) {
+                    ivPoster.load(R.drawable.bg_broken_image)
+                } else {
+                    ivPoster.load(imageUrl) { setShimmerPlaceholder() }
+                }
             }
         }
     }
