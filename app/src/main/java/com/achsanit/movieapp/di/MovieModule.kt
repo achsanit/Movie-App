@@ -3,6 +3,7 @@ package com.achsanit.movieapp.di
 import com.achsanit.movieapp.BuildConfig
 import com.achsanit.movieapp.data.MovieRepository
 import com.achsanit.movieapp.data.service.MovieService
+import com.achsanit.movieapp.ui.fragment.detailcast.DetailCastViewModel
 import com.achsanit.movieapp.ui.fragment.detailmovie.DetailMovieViewModel
 import com.achsanit.movieapp.ui.fragment.home.HomeViewModel
 import com.achsanit.movieapp.utils.CustomInterceptor
@@ -44,8 +45,9 @@ val mainModule = module {
 
     single {
         // instance the service
+        val baseUrl = "${BuildConfig.BASE_TMDB_API}${BuildConfig.API_VERSION}/"
         val retrofit = Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_TMDB_API)
+            .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()
@@ -57,4 +59,5 @@ val mainModule = module {
 
     viewModel { HomeViewModel(get()) }
     viewModel { DetailMovieViewModel(get()) }
+    viewModel { DetailCastViewModel(get()) }
 }
