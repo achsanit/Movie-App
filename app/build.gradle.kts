@@ -99,4 +99,7 @@ dependencies {
 
     val shimmer = "0.5.0" // view for loading event
     implementation("com.facebook.shimmer:shimmer:$shimmer")
+
+    val lottie = "5.0.3" // library for animation
+    implementation("com.airbnb.android:lottie:$lottie")
 }

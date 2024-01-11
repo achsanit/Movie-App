@@ -17,4 +17,6 @@
     <string name="text_date_of_death">Date of Death</string>
     <string name="text_as_character_placeholder">as %s</string>
     <string name="text_detail_cast">Detail Cast</string>
+    <string name="text_movie">Movie</string>
+    <string name="text_app">App</string>
 </resources>
