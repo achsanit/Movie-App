@@ -28,6 +28,9 @@ android {
 
         val baseImageUrl: String by project
         buildConfigField("String", "BASE_IMAGE_URL", baseImageUrl)
+
+        val apiVersion: String by project
+        buildConfigField("String", "API_VERSION", apiVersion)
     }
 
     buildTypes {

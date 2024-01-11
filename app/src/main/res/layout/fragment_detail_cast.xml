@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.detailcast.DetailCastFragment">
+
+    <RelativeLayout
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="@dimen/size_2"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/ib_back_toolbar"
+            android:layout_width="@dimen/size_24"
+            android:layout_height="@dimen/size_24"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/size_16"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/black"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/size_32"
+            android:text="@string/text_detail_cast"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_20" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_person"
+                android:layout_width="@dimen/width_poster_small"
+                android:layout_height="@dimen/height_poster_small"
+                android:layout_marginTop="@dimen/medium_space"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/roundedImageView.smallRounded"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_person_name"
+                style="@style/Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_space"
+                android:layout_marginTop="@dimen/small_space"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_person"
+                tools:text="Alaqua Cox" />
+
+            <TextView
+                android:id="@+id/tv_title_biography"
+                style="@style/Title.medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_space"
+                android:layout_marginTop="@dimen/medium_space"
+                android:text="@string/text_biography"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_person_name" />
+
+            <TextView
+                android:id="@+id/tv_biography"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_space"
+                android:layout_marginTop="@dimen/extra_small_space"
+                android:ellipsize="end"
+                android:maxLines="7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title_biography"
+                tools:text="Michael Lee Aday (September 27, 1947 – January 20, 2022) (height 6ft), better known as Meat Loaf, was an American singer and actor. He was noted for his powerful, wide-ranging voice and theatrical live shows. His Bat Out of Hell trilogy—Bat Out of Hell, Bat Out of Hell II: Back into Hell, and Bat Out of Hell III: The Monster Is Loose—has sold more than 65 million albums worldwide. More than four decades after its release, the first album still sells an estimated 200,000 copies annually and stayed on the charts for over nine years, making it one of the best-selling albums in history.\n\nAfter the commercial success of Bat Out of Hell and Bat Out of Hell II:" />
+
+            <TextView
+                android:id="@+id/tv_title_personal"
+                style="@style/Title.medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_space"
+                android:text="@string/text_personal_info"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_biography"
+                app:layout_constraintTop_toBottomOf="@+id/tv_biography" />
+
+            <TextView
+                android:id="@+id/tv_title_gender"
+                style="@style/Title.small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/extra_small_space"
+                android:text="@string/text_gender"
+                app:layout_constraintStart_toStartOf="@id/tv_title_personal"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_personal" />
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_space"
+                android:layout_marginTop="@dimen/size_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_gender"
+                tools:text="Female" />
+
+            <TextView
+                android:id="@+id/tv_title_birthday"
+                style="@style/Title.small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/extra_small_space"
+                android:text="@string/text_birthday"
+                app:layout_constraintStart_toStartOf="@id/tv_title_personal"
+                app:layout_constraintTop_toBottomOf="@id/tv_gender" />
+
+            <TextView
+                android:id="@+id/tv_birthday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_space"
+                android:layout_marginTop="@dimen/size_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_birthday"
+                tools:text="1997-02-14 (26 years old)" />
+
+            <TextView
+                android:id="@+id/tv_title_date_of_death"
+                style="@style/Title.small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/extra_small_space"
+                android:text="@string/text_date_of_death"
+                app:layout_constraintStart_toStartOf="@id/tv_title_personal"
+                app:layout_constraintTop_toBottomOf="@id/tv_birthday" />
+
+            <TextView
+                android:id="@+id/tv_date_of_death"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_space"
+                android:layout_marginTop="@dimen/size_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_date_of_death"
+                tools:text="1997-02-14 (26 years old)" />
+
+            <TextView
+                android:id="@+id/tv_title_place_birth"
+                style="@style/Title.small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/extra_small_space"
+                android:text="@string/text_place_of_birth"
+                app:layout_constraintStart_toStartOf="@id/tv_title_personal"
+                app:layout_constraintTop_toBottomOf="@id/tv_date_of_death" />
+
+            <TextView
+                android:id="@+id/tv_place_birth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_space"
+                android:layout_marginTop="@dimen/size_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_place_birth"
+                tools:text="Wisconsin, USA" />
+
+            <TextView
+                android:id="@+id/tv_title_known_for"
+                style="@style/Title.medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_space"
+                android:text="@string/text_known_for"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_biography"
+                app:layout_constraintTop_toBottomOf="@+id/tv_place_birth" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_known_for"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_space"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/medium_space"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_known_for"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_movie" />
+
+            <TextView
+                android:id="@+id/tv_title_acting"
+                style="@style/Title.medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_space"
+                android:text="@string/text_acting"
+                app:layout_constraintStart_toStartOf="@+id/tv_title_biography"
+                app:layout_constraintTop_toBottomOf="@+id/rv_known_for" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_acting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/small_space"
+                android:paddingBottom="@dimen/size_60"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_acting"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_acting" />
+
+            <ProgressBar
+                android:id="@+id/pb_detail_cast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
