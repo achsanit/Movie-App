@@ -22,5 +22,17 @@
         <argument
             android:name="MovieId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_detailMovieFragment_to_detailCastFragment"
+            app:destination="@id/detailCastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailCastFragment"
+        android:name="com.achsanit.movieapp.ui.fragment.detailcast.DetailCastFragment"
+        android:label="fragment_detail_cast"
+        tools:layout="@layout/fragment_detail_cast" >
+        <argument
+            android:name="personId"
+            app:argType="integer" />
     </fragment>
 </navigation>

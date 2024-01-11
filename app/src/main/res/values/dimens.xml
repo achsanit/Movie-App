@@ -46,5 +46,7 @@
     <dimen name="text_32">32sp</dimen>
     <dimen name="width_poster">170dp</dimen>
     <dimen name="height_poster">235dp</dimen>
+    <dimen name="width_poster_small">130dp</dimen>
+    <dimen name="height_poster_small">180dp</dimen>
     <dimen name="size_5">5dp</dimen>
 </resources>

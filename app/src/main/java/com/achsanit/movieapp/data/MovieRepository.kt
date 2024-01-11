@@ -1,29 +1,30 @@
 package com.achsanit.movieapp.data
 
 import com.achsanit.movieapp.data.entity.DetailMovieEntity
+import com.achsanit.movieapp.data.entity.DetailPersonEntity
 import com.achsanit.movieapp.data.entity.MoviePoster
 import com.achsanit.movieapp.data.service.MovieService
 import com.achsanit.movieapp.utils.Resource
 import com.achsanit.movieapp.utils.mapper.map
 import com.achsanit.movieapp.utils.resourceMapper
 
-class MovieRepository(private val repository: MovieService) {
+class MovieRepository(private val service: MovieService) {
 
     suspend fun getPopularMovies(): Resource<List<MoviePoster>> {
         return resourceMapper {
-            repository.getPopularMovie().map()
+            service.getPopularMovie().map()
         }
     }
 
     suspend fun getTopRatedMovies(): Resource<List<MoviePoster>> {
         return resourceMapper {
-            repository.getTopRatedMovie().map()
+            service.getTopRatedMovie().map()
         }
     }
 
     suspend fun getSimilarMovies(movieId: Int): Resource<List<MoviePoster>> {
         return resourceMapper {
-            repository.getSimilarMovie(movieId).map()
+            service.getSimilarMovie(movieId).map()
         }
     }
 
@@ -32,8 +33,16 @@ class MovieRepository(private val repository: MovieService) {
         params["append_to_response"] = "credits"
 
         return resourceMapper {
-            repository.getDetailMovie(movieId, params).map()
+            service.getDetailMovie(movieId, params).map()
         }
     }
 
+    suspend fun getDetailPersonById(personId: Int): Resource<DetailPersonEntity> {
+        val params= HashMap<String, Any>()
+        params["append_to_response"] = "images,movie_credits"
+
+        return resourceMapper {
+            service.getPersonById(personId, params).map()
+        }
+    }
 }

@@ -28,6 +28,9 @@ android {
 
         val baseImageUrl: String by project
         buildConfigField("String", "BASE_IMAGE_URL", baseImageUrl)
+
+        val apiVersion: String by project
+        buildConfigField("String", "API_VERSION", apiVersion)
     }
 
     buildTypes {
@@ -96,4 +99,7 @@ dependencies {
 
     val shimmer = "0.5.0" // view for loading event
     implementation("com.facebook.shimmer:shimmer:$shimmer")
+
+    val lottie = "5.0.3" // library for animation
+    implementation("com.airbnb.android:lottie:$lottie")
 }

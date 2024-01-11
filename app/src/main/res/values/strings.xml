@@ -7,4 +7,16 @@
     <string name="text_cast">Cast</string>
     <string name="release_duration_time_placeholder">%s | %s</string>
     <string name="text_similar_movie">Similar Movie</string>
+    <string name="text_biography">Biography</string>
+    <string name="text_personal_info">Personal Info</string>
+    <string name="text_gender">Gender</string>
+    <string name="text_birthday">Birthday</string>
+    <string name="text_place_of_birth">Place of Birth</string>
+    <string name="text_known_for">Known For</string>
+    <string name="text_acting">Acting</string>
+    <string name="text_date_of_death">Date of Death</string>
+    <string name="text_as_character_placeholder">as %s</string>
+    <string name="text_detail_cast">Detail Cast</string>
+    <string name="text_movie">Movie</string>
+    <string name="text_app">App</string>
 </resources>

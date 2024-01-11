@@ -17,6 +17,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Title.small">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="roundedImageView" parent="Theme.MovieApp">
         <item name="cornerFamily">rounded</item>
     </style>

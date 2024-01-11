@@ -38,7 +38,11 @@ class DetailMovieFragment : Fragment() {
     private val detailMovViewModel: DetailMovieViewModel by viewModel()
 
     private val castAdapter: CastMovieAdapter by lazy {
-        CastMovieAdapter()
+        CastMovieAdapter {
+            val action =
+                DetailMovieFragmentDirections.actionDetailMovieFragmentToDetailCastFragment(it.id)
+            findNavController().navigate(action)
+        }
     }
     private val similarMovieAdapter: PosterMovieAdapter by lazy {
         PosterMovieAdapter {
@@ -163,6 +167,8 @@ class DetailMovieFragment : Fragment() {
 
     private fun addGenreChip(data: List<GenreEntity>) {
         with(binding) {
+            cgGenre.removeAllViews()
+
             data.forEach { genreItem ->
                 val newChip = Chip(requireContext())
                 newChip.text = genreItem.name

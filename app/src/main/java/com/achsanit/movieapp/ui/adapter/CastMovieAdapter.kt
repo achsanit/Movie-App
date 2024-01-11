@@ -12,7 +12,7 @@ import com.achsanit.movieapp.data.entity.CastMovieEntity
 import com.achsanit.movieapp.databinding.ItemCastBinding
 import com.achsanit.movieapp.utils.setShimmerPlaceholder
 
-class CastMovieAdapter: RecyclerView.Adapter<CastMovieAdapter.ViewHolder>() {
+class CastMovieAdapter(private val onClickItem: (CastMovieEntity) -> Unit): RecyclerView.Adapter<CastMovieAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemCastBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(data: CastMovieEntity) {
             with(binding) {
@@ -27,6 +27,7 @@ class CastMovieAdapter: RecyclerView.Adapter<CastMovieAdapter.ViewHolder>() {
                     ivActor.load(R.drawable.bg_broken_image)
                 }
 
+                root.setOnClickListener { onClickItem(data) }
             }
         }
     }
